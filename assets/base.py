@@ -13,5 +13,3 @@ class SafetyAsset:
         print(f"[{self.serial_number}] {self.location} (last inspected: {self.last_inspected})\n")
         
     
-        
-    
