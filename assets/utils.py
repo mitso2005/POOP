@@ -9,9 +9,9 @@ def print_asset_summary(assets):
         for asset in assets:
             if isinstance(asset, child):
                 instances += 1
-            
-    for asset in assets:
-        asset.describe()
+                asset.describe()
+                
+        print(f'Total {child.__name__}: {instances}')
 
     
     
