@@ -28,7 +28,7 @@ if __name__ == "__main__":
     factory_1.add_asset(FireDoor("FD-041", "F5D30", "Outside", "Never"))
     print(factory_1.asset_count)
     
-    factory_1.name = 'factory_1'
+    factory_1.name = ''
     print(factory_1.name)
     
     

@@ -35,4 +35,6 @@ class Building:
     # name setter
     @name.setter
     def name(self, new_name):
+        if new_name == '':
+            raise ValueError('Cannot assign empty name to Building')
         self._name = new_name
