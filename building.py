@@ -22,3 +22,7 @@ class Building:
     @property
     def get_assets(self):
         return self._assets
+    
+    @property
+    def asset_count(self):
+        return len(self._assets)

@@ -24,9 +24,9 @@ if __name__ == "__main__":
     run_all_inspections(assets_1)
     
     factory_1 = Building('Factory', '112 Industrial Dr, Richmond', assets_1)
-    print(factory_1.get_assets)
+    print(factory_1.asset_count)
     factory_1.add_asset(FireDoor("FD-041", "F5D30", "Outside", "Never"))
-    print(factory_1.get_assets)
+    print(factory_1.asset_count)
     
     
     
