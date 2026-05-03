@@ -18,6 +18,8 @@ def print_asset_summary(assets: Iterable[SafetyAsset]):
 def run_all_inspections(assets: Iterable[SafetyAsset]):
     for asset in assets:
         asset.run_inspection()
+
+    
     
     
 

@@ -18,4 +18,5 @@ class SafetyAsset(ABC):
     def describe(self):
         print(f"[{self.serial_number}] {self.location} (last inspected: {self.last_inspected})\n")
         
-    
+    def __eq__(slef, other):
+        return slef.serial_number == other.serial_number
