@@ -2,22 +2,26 @@ from assets.base import SafetyAsset, __eq__
 from exceptions import InspectionError
 
 class Building:
-    def __init__(self, _name, address, _assets: list[SafetyAsset]):
+    def __init__(self, _name, address):
         self._name = _name
         self.address = address
-        self._assets = _assets
+        self._assets = []
         
     def add_asset(self, asset):
         if isinstance(asset, SafetyAsset):
             pass
         else:
-            raise(print('asset is not an instance of SafetyAsset'))
+            raise TypeError("asset is not an instance of SafetyAsset")
         
         for a in self._assets:
             if asset.__eq__(a):
                 raise(print('asset already exists in Building'))
         
         self._assets.append(asset)
+        
+    @classmethod
+    def from_dict(cls, data):
+        return cls(data['name'], data['address'])
         
     @property
     def get_assets(self):

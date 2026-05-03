@@ -23,7 +23,7 @@ if __name__ == "__main__":
     print_asset_summary(assets_2)
     run_all_inspections(assets_1)
     
-    factory_1 = Building('Factory', '112 Industrial Dr, Richmond', assets_1)
+    factory_1 = Building('Factory', '112 Industrial Dr, Richmond')
     print(factory_1.asset_count)
     factory_1.add_asset(FireDoor("FD-041", "F5D30", "Outside", "Never"))
     print(factory_1.asset_count)
@@ -33,6 +33,9 @@ if __name__ == "__main__":
     
     if SafetyAsset.is_valid_serial('EX-001'):
         print('yes')
+        
+    tower = Building.from_dict({"name": "Riverside Tower", "address": "42 Fire Lane"})
+    print(tower.name)
     
     
     
