@@ -1,5 +1,4 @@
-from assets.base import SafetyAsset, __eq__
-from exceptions import InspectionError
+from assets.base import SafetyAsset
 
 class Building:
     def __init__(self, _name, address):
@@ -15,9 +14,15 @@ class Building:
         
         for a in self._assets:
             if asset.__eq__(a):
-                raise(print('asset already exists in Building'))
+                raise ValueError('asset already exists in Building')
         
         self._assets.append(asset)
+        
+    def get_overdue_assets(self):
+        return [x for x in self._assets if x.last_inspected == "Never"]
+    
+    def get_assets_by_type(self, asset_type):
+        return [x for x in self._assets if isinstance(x, asset_type)]
         
     @classmethod
     def from_dict(cls, data):

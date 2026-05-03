@@ -26,6 +26,7 @@ if __name__ == "__main__":
     factory_1 = Building('Factory', '112 Industrial Dr, Richmond')
     print(factory_1.asset_count)
     factory_1.add_asset(FireDoor("FD-041", "F5D30", "Outside", "Never"))
+    factory_1.add_asset(SmokeDetector("SD-011", "Ei64550", "Stairs", "Never"))
     print(factory_1.asset_count)
     
     factory_1.name = 'factory_1'
@@ -36,6 +37,9 @@ if __name__ == "__main__":
         
     tower = Building.from_dict({"name": "Riverside Tower", "address": "42 Fire Lane"})
     print(tower.name)
+    
+    print(factory_1.get_overdue_assets())
+    print(factory_1.get_assets_by_type(SmokeDetector))
     
     
     

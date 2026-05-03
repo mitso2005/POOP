@@ -18,7 +18,7 @@ class FireExtinguisher(SafetyAsset):
         else:
             print('VALID TYPE - FireExtinguisher Inspection Passed')
         
-        self.last_inspected = datetime.date
+        self.last_inspected = datetime.date.today()
     
     def describe(self):
         print(f"[{self.serial_number}] type: {self.feat} {self.location} (last inspected: {self.last_inspected})")
@@ -35,7 +35,7 @@ class SmokeDetector(SafetyAsset):
     def run_inspection(self):
         print('BEEP - SmokeDetector Inspection Passed')
     
-        self.last_inspected = datetime.date
+        self.last_inspected = datetime.date.today()
     
     def describe(self):
         print(f"[{self.serial_number}] type: {self.feat} {self.location} (last inspected: {self.last_inspected})")
@@ -52,7 +52,7 @@ class FireDoor(SafetyAsset):
     def run_inspection(self):
         print('OPEN AND CLOSE - FireDoor Inspection Passed')
 
-        self.last_inspected = datetime.date
+        self.last_inspected = datetime.date.today()
 
     def describe(self):
         print(f"[{self.serial_number}] type: {self.feat} {self.location} (last inspected: {self.last_inspected})")

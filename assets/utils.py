@@ -1,7 +1,5 @@
-from exceptions import InspectionError
 from typing import Iterable
 from assets.base import SafetyAsset
-from assets.devices import FireDoor, FireExtinguisher, SmokeDetector
 
 def print_asset_summary(assets: Iterable[SafetyAsset]):
     print(f'Total Assets: {len(assets)}')
