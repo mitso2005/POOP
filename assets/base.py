@@ -24,4 +24,12 @@ class SafetyAsset(ABC):
         print(f"[{self.serial_number}] {self.location} (last inspected: {self.last_inspected})\n")
         
     def __eq__(slef, other):
+        if not isinstance(other, SafetyAsset):
+            raise(NotImplemented) 
         return slef.serial_number == other.serial_number
+    
+    def __str__(self):
+        return f'{self.__class__.__name__} {self.serial_number} at {self.location}'
+    
+    def __repr__(self):
+        return f'{self.__class__.__name__}(serial=\'{self.serial_number}\')'

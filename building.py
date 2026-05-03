@@ -23,6 +23,12 @@ class Building:
     
     def get_assets_by_type(self, asset_type):
         return [x for x in self._assets if isinstance(x, asset_type)]
+    
+    def __len__(self):
+        return len(self._assets)
+    
+    def __str__(self):
+        return f'{self.name} ({self.address}) - {len(self)} assets'
         
     @classmethod
     def from_dict(cls, data):
@@ -47,3 +53,4 @@ class Building:
         if new_name == '':
             raise ValueError('Cannot assign empty name to Building')
         self._name = new_name
+        

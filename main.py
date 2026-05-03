@@ -41,5 +41,9 @@ if __name__ == "__main__":
     print(factory_1.get_overdue_assets())
     print(factory_1.get_assets_by_type(SmokeDetector))
     
+    print(assets_2[0])
+    print(assets_1[1].__repr__())
+    
+    print(factory_1)
     
     
