@@ -2,8 +2,8 @@ from assets.base import SafetyAsset, __eq__
 from exceptions import InspectionError
 
 class Building:
-    def __init__(self, name, address, _assets: list[SafetyAsset]):
-        self.name = name
+    def __init__(self, _name, address, _assets: list[SafetyAsset]):
+        self._name = _name
         self.address = address
         self._assets = _assets
         
@@ -26,3 +26,13 @@ class Building:
     @property
     def asset_count(self):
         return len(self._assets)
+    
+    # name getter
+    @property
+    def name(self):
+        return self._name
+    
+    # name setter
+    @name.setter
+    def name(self, new_name):
+        self._name = new_name
