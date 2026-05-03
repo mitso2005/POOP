@@ -2,6 +2,7 @@ from assets.base import SafetyAsset
 from assets.devices import FireDoor, SmokeDetector, FireExtinguisher
 from assets.utils import print_asset_summary, run_all_inspections
 from building import Building
+from technician import Technician
 
 
 if __name__ == "__main__":
@@ -23,7 +24,8 @@ if __name__ == "__main__":
     print_asset_summary(assets_2)
     run_all_inspections(assets_1)
     
-    factory_1 = Building('Factory', '112 Industrial Dr, Richmond')
+    factory_1 = Building('Factory_2', '112 Industrial Dr, Richmond')
+    factory_2 = Building('Factory_2', '1122 Industrial Dr, Richmond')
     print(factory_1.asset_count)
     factory_1.add_asset(FireDoor("FD-041", "F5D30", "Outside", "Never"))
     factory_1.add_asset(SmokeDetector("SD-011", "Ei64550", "Stairs", "Never"))
@@ -45,5 +47,12 @@ if __name__ == "__main__":
     print(assets_1[1].__repr__())
     
     print(factory_1)
+    
+    tech_1 = Technician('tech_1', 1234)
+    
+    tech_1.assign_to(factory_1)
+    tech_1.assign_to(factory_2)
+    
+    print(tech_1.get_workload)
     
     
