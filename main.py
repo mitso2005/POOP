@@ -1,6 +1,6 @@
 from assets.base import SafetyAsset
 from assets.devices import FireDoor, SmokeDetector, FireExtinguisher
-from assets.utils import print_asset_summary
+from assets.utils import print_asset_summary, run_all_inspections
 
 
 if __name__ == "__main__":
@@ -20,4 +20,7 @@ if __name__ == "__main__":
     print(SafetyAsset.all_serials)
 
     print_asset_summary(assets_2)
+    run_all_inspections(assets_1)
+    
+    
     

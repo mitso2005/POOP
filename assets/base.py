@@ -1,4 +1,6 @@
-class SafetyAsset:
+from abc import ABC, abstractmethod
+
+class SafetyAsset(ABC):
     total_assets = 0
     all_serials = []
     
@@ -8,6 +10,10 @@ class SafetyAsset:
         self.last_inspected = last_inspected
         SafetyAsset.total_assets += 1
         SafetyAsset.all_serials.append(serial_number)
+        
+    @abstractmethod
+    def run_inspection(self):
+        pass
         
     def describe(self):
         print(f"[{self.serial_number}] {self.location} (last inspected: {self.last_inspected})\n")
