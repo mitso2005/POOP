@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+import re
 
 class SafetyAsset(ABC):
     total_assets = 0
@@ -14,6 +15,10 @@ class SafetyAsset(ABC):
     @abstractmethod
     def run_inspection(self):
         pass
+    
+    @staticmethod
+    def is_valid_serial(serial):
+        return re.fullmatch(r"[A-Z]{2}-\d{3,}", serial)
         
     def describe(self):
         print(f"[{self.serial_number}] {self.location} (last inspected: {self.last_inspected})\n")
