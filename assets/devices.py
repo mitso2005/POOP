@@ -2,11 +2,13 @@ from assets.base import SafetyAsset
 from exceptions import InspectionError
 import datetime
 
+# Module Structure: concrete device types live in a dedicated module.
 class FireExtinguisher(SafetyAsset):
     VALID_TYPES = {"CO2", "Dry Powder", "Wet Chemical", "Water"}
     total = 0
     
     def __init__(self, serial_number, extinguisher_type , location, last_inspected):
+        # super().__init__(): extend parent setup before child-specific fields.
         super().__init__(serial_number, location, last_inspected) 
         self.feat = extinguisher_type
         
@@ -27,6 +29,7 @@ class SmokeDetector(SafetyAsset):
     total = 0
     
     def __init__(self, serial_number, detector_model, location, last_inspected):
+        # super().__init__(): reuse shared base initialization.
         super().__init__(serial_number, location, last_inspected) 
         self.feat = detector_model
         
@@ -44,6 +47,7 @@ class FireDoor(SafetyAsset):
     total = 0
     
     def __init__(self, serial_number, door_rating, location, last_inspected):
+        # super().__init__(): inherit common SafetyAsset state.
         super().__init__(serial_number, location, last_inspected) 
         self.feat = door_rating
         

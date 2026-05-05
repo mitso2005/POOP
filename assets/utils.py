@@ -1,6 +1,7 @@
 from typing import Iterable
 from assets.base import SafetyAsset
 
+# Module Structure: standalone helper/reporting utilities are grouped here.
 def print_asset_summary(assets: Iterable[SafetyAsset]):
     print(f'Total Assets: {len(assets)}')
     
@@ -18,7 +19,7 @@ def run_all_inspections(assets: Iterable[SafetyAsset]):
         asset.run_inspection()
         
 def print_report(obj):
-    # Duck typing: any object with these methods can be reported.
+    # Duck Typing: any object with summary() and list_items() is compatible.
     obj.summary()
     obj.list_items()
 
