@@ -6,6 +6,12 @@ class Building:
         self.address = address
         self._assets = []
         
+    def summary(self):
+        print(f'Building Name: {self.name} | Address: {self.address} | Asset Count: {self.asset_count} | Overdue Inspections: {self.get_overdue_assets()}')
+        
+    def list_items(self):
+        print(f'Assets: {self.get_assets}')
+        
     def add_asset(self, asset):
         if isinstance(asset, SafetyAsset):
             pass

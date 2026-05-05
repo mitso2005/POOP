@@ -1,6 +1,6 @@
 from assets.base import SafetyAsset
 from assets.devices import FireDoor, SmokeDetector, FireExtinguisher
-from assets.utils import print_asset_summary, run_all_inspections
+from assets.utils import InspectionLog, print_asset_summary, run_all_inspections, print_report
 from building import Building
 from technician import Technician
 
@@ -40,7 +40,7 @@ if __name__ == "__main__":
     tower = Building.from_dict({"name": "Riverside Tower", "address": "42 Fire Lane"})
     print(tower.name)
     
-    print(factory_1.get_overdue_assets())
+    print(f'{factory_1.get_overdue_assets()}')
     print(factory_1.get_assets_by_type(SmokeDetector))
     
     print(assets_2[0])
@@ -54,5 +54,11 @@ if __name__ == "__main__":
     tech_1.assign_to(factory_2)
     
     print(tech_1.get_workload)
+    
+    print_report(tower)
+    print_report(factory_1)
+    
+    log_1 = InspectionLog('test', assets_2)
+    print_report(log_1)
     
     
